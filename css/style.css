@@ -1,3 +1,4 @@
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -50,6 +51,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
 body {
+  overflow: hidden;
+  overflow-y: scroll;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -1770,6 +1773,11 @@ textarea.form-control {
   color: #fff;
   background-color: rgba(40, 167, 69, 0.9);
   border-radius: 0.25rem; }
+
+#about-section {
+  background-color: #5D3FD3;
+  margin-bottom: 10rem;
+}
 
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: #28a745;
@@ -7991,7 +7999,7 @@ button.bg-dark:focus {
   color: #fff !important; }
 
 .text-primary {
-  color: #007bff !important; }
+  color: #fff !important; }
 
 a.text-primary:hover, a.text-primary:focus {
   color: #0056b3 !important; }
@@ -8134,11 +8142,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background: #000000;
+  background: #000000; 
+  /* THIS IS WHERE YOU CAN CHANGE ALL THE BACKGROUND!!!!!!!!!!!!!!!  */
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
-  color: #999999; }
+  color: #fff; }
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -8345,9 +8354,12 @@ h1, h2, h3, h4, h5,
       font-size: 16px;
       letter-spacing: .1em; }
     .ftco-navbar-light.scrolled .nav-link {
-      color: #000000 !important; }
+      color: #000000 !important;
+    }
       .ftco-navbar-light.scrolled .nav-link.active {
-        color: #5D3FD3 !important; }
+        color: #fff !important;
+        text-decoration: underline;
+       }
     .ftco-navbar-light.scrolled.awake {
       margin-top: 0px;
       -webkit-transition: .3s all ease-out;
@@ -8397,7 +8409,7 @@ h1, h2, h3, h4, h5,
 .owl-carousel {
   position: relative; }
   .owl-carousel .owl-item {
-    opacity: .4; }
+    opacity: .3; }
     .owl-carousel .owl-item.active {
       opacity: 1; }
   .owl-carousel .owl-dots {
