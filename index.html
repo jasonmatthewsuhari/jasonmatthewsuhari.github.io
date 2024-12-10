@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Portfolio | Jason Matthew Suhari</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img id="avatar" src="./assets/images/pfp-4.png" alt="Jason Matthew Suhari" width="80" class="fade">
+        </figure>
+        
+        <style>
+          /* Add fade animation styles */
+          .fade {
+            transition: opacity 1s ease-in-out; /* Smooth fade transition */
+            opacity: 1;
+          }
+        
+          .fade-out {
+            opacity: 0;
+          }
+        </style>
+        
+        <script>
+          const pfpImages = [
+            "./assets/images/pfp-1.png",
+            "./assets/images/pfp-2.png",
+            "./assets/images/pfp-3.png",
+            "./assets/images/pfp-4.png",
+          ];
+        
+          let currentIndex = 0;
+          const avatarElement = document.getElementById("avatar");
+        
+          setInterval(() => {
+            // Add fade-out class
+            avatarElement.classList.add("fade-out");
+        
+            // Wait for the fade-out effect to complete before switching the image
+            setTimeout(() => {
+              currentIndex = (currentIndex + 1) % pfpImages.length;
+              avatarElement.src = pfpImages[currentIndex];
+        
+              // Remove fade-out class to start the fade-in effect
+              avatarElement.classList.remove("fade-out");
+            }, 1000); // Match this timeout with the CSS transition duration (1s)
+          }, 5000); // Switch images every 5 seconds
+        </script>
+        
+
+
+        <div class="info-content">
+          <h1 class="name" title="Jason Matthew Suhari">Jason M. Suhari</h1>
+
+          <p class="title">Data Scientist  /  ML Scientist</p>
+          <p class="title">Game Dev</p>
+          <p class="title">Pixel Artist</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Pronouns</p>
+              <address>he/him</address>
+            </div>
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:jason.suhari@u.nus.edu" class="contact-link">jason.suhari@u.nus.edu</a>
+            </div>
+
+          </li>
+
+          
+
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Kent Ridge, Singapore</address>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Work Availability</p>
+              <address>Spring 2025 (PT) & Summer 2025 (FT)</address>
+            </div>
+          </li>
+        
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.instagram.com/jasonmatthewsuhari" class="social-link" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/jasonmatthewsuhari/" class="social-link" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          
+          <li class="social-item">
+            <a href="mailto:jason.suhari@u.nus.edu" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+          
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link data-target="about">About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="resume">Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="portfolio">Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="blog">Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-target="contact">Hire Me</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About Jason</h2>
+        </header>
+
+        <section class="about-text">
+          <p> Welcome to my portfolio website! 👋</p>
+
+          <p>
+            I’m <strong>Jason Matthew Suhari</strong>, a 2nd year student   at the 
+            <strong>National University of Singapore (NUS)</strong>, pursuing a dual major in
+            Data Science and Computer Science with a minor in Quant. Finance. 
+          </p>
+
+          <p>
+            My job is to design efficient, scalable solutions with user appeal: <strong>building stuff that 
+              people want</strong>. Whether it's data pipelines, dashboards, ML models or games, I aim to add
+            a personal touch that ensures an impactful and easy-to-use final product. 
+          </p>
+
+          <p>
+            If you're interested in what I can do for you, hit me up! 🤙
+          </p>
+          
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I Do</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Pipelines</h4>
+
+                <p class="service-item-text">
+                  Data workflow automation, integration, processing.<br><br>
+                  <strong>Tech:</strong> Apache Airflow, Apache Spark, Kafka, SQL, Python
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine Learning & AI</h4>
+
+                <p class="service-item-text">
+                  ML model development and deployment for various domains.<br><br>
+                  <strong>Tech:</strong> TensorFlow, PyTorch, Scikit-learn
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+          <br>
+
+          <section class="about-text" style="text-align: center;">
+            <p><strong>...and more! 👀 (check out my portfolio)</strong></p>
+          </section>  
+          
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">LinkedIn Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="University Senior" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>University Senior</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    One of the most adaptable individuals I have ever met, Jason consistently demonstrates diligence and passion in everything he does. For a Year 2 student, his technical expertise in Data Science—particularly in areas like data analysis and software development—is truly impressive and surpasses that of some more senior students. His commitment to excellence is evident through projects like his Orbital initiative. He’s an incredibly hard worker who doesn’t rest until the job is done. It has been an absolute honor to work alongside him!
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Data Science Coursemate" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Data Science Coursemate</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    I’ve had the chance to work with Jason throughout our data science courses who’s been consistently impressive. His grasp of data science concepts, from machine learning to data visualization, is top-notch. He’s always willing to help out, collaborate, and share insights, making them a great team player. If you're looking for someone who's not only skilled but also reliable and easy to work with, I highly recommend Jason!
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Resident Fellow" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Resident Fellow</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    I highly recommend Jason! As a Resident Assistant, he demonstrated exceptional leadership skills, attention to detail, and excellent communication. He's prompt, responsible, and enthusiastic - great qualities for any leadership role. A true asset to our Residential Team!
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="University Senior" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>University Senior</h4>
+
+              <time datetime="2021-06-14">October 13, 2024</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-2.png" alt="Data Science Coursemate" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Data Science Coursemate</h4>
+
+              <time datetime="2024-08-12">October 12, 2024</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-4.png" alt="Resident Fellow" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Resident Fellow</h4>
+
+              <time datetime="2024-08-07">October 7, 2024</time>
+
+              <div data-modal-text>
+                <p>
+                  I highly recommend Jason! As a Resident Assistant, he demonstrated exceptional leadership skills, attention to detail, and excellent communication. He's prompt, responsible, and enthusiastic - great qualities for any leadership role. A true asset to our Residential Team!
+                </p>
+                <a></a>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>   
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <a href="./assets/Jason_Matthew_Suhari_Resume.pdf" download class="resume-button" target="_blank">
+          <ion-icon name="download-outline"></ion-icon>
+          Download Resume
+        </a>
+
+        <br><br><br>
+        
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="bulb-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Skills & Certifications</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Technical Skills</h4>
+              <p class="timeline-text">
+                <strong>Python</strong> (NumPy, Pandas, SciKit-Learn, Matplotlib, PyTorch, TensorFlow, Seaborn), 
+                <strong>SQL</strong> (MySQL, PostgreSQL, IBM dB2), 
+                <strong>R</strong> (Tidyverse), 
+                <strong>Machine Learning</strong> (SciKit-Learn, PyTorch, TensorFlow), 
+                <strong>Data Visualization</strong> (Seaborn, Matplotlib, PowerBI, Tableau),
+                <strong>Data Engineering</strong> (Airflow, Kafka, Spark, Hadoop, Docker)
+                Java, 
+                PostgreSQL,
+                Google Colab, 
+                Jupyter, 
+                Git, 
+                Project Management
+                
+              </p>
+            </li>
+          </ol> <br>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Certifications</h4>
+              <p class="timeline-text">
+                IBM Data Engineering + Data Science + Data Analyst Professional
+              </p>
+            </li>
+          </ol> <br>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">National University of Singapore, Singapore</h4>
+              <span>2023 - 2027</span>
+              <p class="timeline-text">
+                <strong>GPA: 4.70 / 5.00</strong><br>
+                <strong>Relevant Coursework:</strong> Introduction to Data Science, Artificial Intelligence, Programming Methodology, Linear Algebra, Data Structures and Algorithms, Data Visualization, Probability, Mathematical Statistics, Quantitative Finance
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Xin Zhong School, Surabaya, Indonesia</h4>
+              <span>2012 - 2023</span>
+              <p class="timeline-text">
+                <strong>GPA: ~97%</strong><br>
+                <strong>Relevant Coursework:</strong> A-Level Mathematics, Physics, Chemistry, Biology; AS-Level Information Technology, Business Management; HSK5 Mandarin Chinese
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Activities / Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CommIT Technical Member</h4>
+              <span>Nov 2024 — Present</span>
+              <p class="timeline-text">
+                Designed and developed a finance management application to streamline budgeting and expense tracking for NUS CCAs.
+              </p>
+            </li>
+            
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CS1010A Teaching Assistant</h4>
+              <span>Aug 2024 — Dec 2024</span>
+              <p class="timeline-text">
+                - Conducted weekly tutorial sessions on programming methodology in Python for 12 undergraduate students<br>
+                - Fostered positive student community through weekly forum engagement as the Forum-In-Charge
+
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Prince George's Park Residential Assistant</h4>
+              <span>Jun 2024 — Present</span>
+              <p class="timeline-text">
+                - Handled emergencies and conflict resolutions, planned events for 1,000+ residential ecosystem<br>
+                - Organized and executed large-scale events with a turnout of ~150 participant<br>
+                - Led Student Leaders Affairs subcommittee, responsible for cluster leader recruitment, training, and welfare
+
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Analysis</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Data Engineering</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Finance</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Game Dev</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Gallery</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Misc.</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item active open-modal-btn" data-filter-item data-category="game dev">
+              <a href="https://youtu.be/j8fvBXSfXcE?si=13TWFMZtYatB67Ol" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/9tofinity.jpg" alt="9-to-Finity" loading="lazy">
+                </figure>
+                <h3 class="project-title">
+                  9-to-Finity
+                </h3>
+                <p class="project-category">
+                  Chaotic 4th-wall breaking management game
+                </p>
+              </a>
+            </li>
+            
+            
+            <li class="project-item active open-modal-btn" data-filter-item data-category="game dev">
+              <a href="https://github.com/jasonmatthewsuhari/BugBytes" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/bugbytes.png" alt="BugBytes" loading="lazy">
+                </figure>
+                <h3 class="project-title">BugBytes</h3>
+                <p class="project-category">
+                  Bug-fighting 4th-wall breaking top-down shooter game
+                </p>
+              </a>
+            </li>
+            
+            <li class="project-item active open-modal-btn" data-filter-item data-category="misc.">
+              <a href="https://docs.google.com/document/d/1XJk43CB8aNGvMqpZZ-qMVIdUCykv4T5f9KMnIoa0t3k/edit?usp=sharing" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/digidetox.jpg" alt="CHS Case Competitions" loading="lazy">
+                </figure>
+                <h3 class="project-title">DigiDetox</h3>
+                <p class="project-category">
+                  Case study for a screen addiction management app in Singapore for CHS Case Comp '23
+                </p>
+              </a>
+            </li>
+            
+            <li class="project-item active open-modal-btn" data-filter-item data-category="machine learning">
+              <a href="https://github.com/jasonmatthewsuhari/IT1244_UrbanSound" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/urbansound.jpeg" alt="Urban Sound Classification" loading="lazy">
+                </figure>
+                <h3 class="project-title">Urban Sound Classification</h3>
+                <p class="project-category">
+                  Classifying sound using CNNs and the UrbanSound8K dataset
+                </p>
+              </a>
+            </li>
+            
+            <li class="project-item active open-modal-btn" data-filter-item data-category="game dev">
+              <a href="https://www.youtube.com/watch?v=nM_ZqTw6Uyg" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/rolypolywizard.jpg" alt="Roly-Poly Wizard" loading="lazy">
+                </figure>
+                <h3 class="project-title">Roly-Poly Wizard</h3>
+                <p class="project-category">
+                  Side-scrolling platformer game
+                </p>
+              </a>
+            </li>
+            
+
+          </ul>
+
+        </section>
+      </article>
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Jason's Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="https://medium.com/@jasonmatthewsuhari/the-great-blunder-of-study-techniques-507d5f684e73">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/pomodoro.jpeg" alt="The Great Blunder of Study Techniques" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Productivity</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-02-23">Mar 18, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">The Great Blunder of Study Techniques</h3>
+                  <p class="blog-text">
+                    A critique of overhyped "study techniques" promoted on social media, urging students to critically assess their own learning needs instead of blindly following one-size-fits-all methods.
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://medium.com/@jasonmatthewsuhari/the-deadline-dilemma-how-indefinite-tasks-kill-your-to-do-list-7e25ed5af087">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/todo.jpeg" alt="The Deadline Dilemma" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Productivity</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-02-23">Mar 17, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">The Deadline Dilemma: How Indefinite Tasks Kill Your To-Do List</h3>
+                  <p class="blog-text">
+                    Tackling indefinite tasks on your to-do list by using a priority-urgency matrix to break them into actionable short-term tasks, making time management more effective and less overwhelming.
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://theridge.sg/2024/02/02/dollars-to-dinners-3-must-eats-at-supper-stretch/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/supperstretch.png" alt="Dollars to Dinners" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Lifestyle</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-02-23">Feb 2, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Dollars to Dinners: 3 Must-Eats at Supper Stretch</h3>
+                  <p class="blog-text">
+                    A review of three affordable and delicious late-night meal options at Supper Stretch near NUS for under $5 each.
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://theridge.sg/2023/12/12/king-of-the-hill/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/kingofthehill.png" alt="King of the Hill" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Motivational</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-02-23">Feb 2, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">King of the Hill</h3>
+                  <p class="blog-text">
+                    A journey of self-improvement, emphasizing the importance of shifting from competing with others to personal growth, finding joy in one's hobbies, and embracing the challenges of mastery with patience and passion.
+                </div>
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Hire Me</h2>
+        </header>
+
+        <section class="about-text">
+          <p> Hopefully now you've got a better idea of who I am and what I do! 🎊</p>
+
+          <p> Fill up the form below to easily shoot me an e-mail with a request for contact. I'll try my best to reply as fast as possible (approx. within 1 business day). Thank you for visiting the website!</p>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="mailto:jason.suhari@u.nus.edu?subject=Portfolio%20Website%20Contact%20Request" method="post" enctype="text/plain" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+          
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+          
+            <button class="form-btn" type="submit">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          
+          </form>
+          
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
